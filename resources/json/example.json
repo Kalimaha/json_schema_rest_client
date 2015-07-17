@@ -25,7 +25,7 @@
       "parameter": {
          "type": "object",
          "title": "Parameter",
-         "description": "Description of single parameter.",
+         "description": "Single parameter.",
          "properties": {
             "name": {
                "type": "string",
@@ -34,14 +34,19 @@
             },
             "value": {
                "type": "string",
-               "title": "Parameter's Value.",
+               "title": "Parameter's Value",
                "description": "Value of the parameter."
             },
             "type": {
                "type": "string",
-               "title": "Parameter's Type.",
+               "title": "Parameter's Type",
                "description": "Type of the parameter.",
-               "enum": ["string", "number", "boolean"]
+               "enum": [
+                  "string",
+                  "number",
+                  "boolean",
+                  "date"
+               ]
             }
          }
       },
@@ -51,6 +56,8 @@
          "description": "Definition of the parameters for the request.",
          "properties": {
             "parameters": {
+               "title": "Parameters",
+               "description": "List of parameters for the request.",
                "type": "array",
                "items": {
                   "$ref": "#/definitions/parameter"
@@ -61,7 +68,20 @@
       "response": {
          "type": "object",
          "title": "Response Payload",
-         "description": "Definition of the parameters for the response."
+         "description": "Definition of the response.",
+         "properties": {
+            "type": {
+               "type": "string",
+               "title": "Output's Type",
+               "description": "Type of the output.",
+               "enum": [
+                  "string",
+                  "number",
+                  "boolean",
+                  "date"
+               ]
+            }
+         }
       },
       "service": {
          "type": "object",
