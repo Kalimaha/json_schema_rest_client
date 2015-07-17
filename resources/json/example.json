@@ -33,6 +33,16 @@
          "title": "Parameter",
          "description": "Single parameter.",
          "properties": {
+            "parameterType": {
+               "type": "string",
+               "title": "Parameter's Type",
+               "description": "Type of the parameter.",
+               "enum": [
+                  "path",
+                  "search",
+                  "form"
+               ]
+            },
             "name": {
                "type": "string",
                "title": "Parameter's Name",
@@ -43,9 +53,9 @@
                "title": "Parameter's Value",
                "description": "Value of the parameter."
             },
-            "type": {
+            "valueType": {
                "type": "string",
-               "title": "Parameter's Type",
+               "title": "Value's Type",
                "description": "Type of the parameter.",
                "enum": [
                   "string",
@@ -119,9 +129,7 @@
                "$ref": "#/definitions/response"
             }
          }
-      }
-   },
-   "properties": {
+      },
       "services": {
          "type": "array",
          "title": "Available Services",
@@ -129,6 +137,12 @@
          "items": {
             "$ref": "#/definitions/service"
          }
+      }
+   },
+
+   "properties": {
+      "wds": {
+         "$ref": "#/definitions/services"
       }
    }
 }
