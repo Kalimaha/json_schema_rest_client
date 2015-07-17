@@ -1,0 +1,102 @@
+{
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "type": "object",
+   "title": "REST Web Services Schema",
+   "description": "Definition of REST web services.",
+   "definitions": {
+      "baseURL": {
+         "type": "string",
+         "format": "url",
+         "title": "Base URL",
+         "description": "Base URL for the web service."
+      },
+      "method": {
+         "type": "string",
+         "title": "HTTP Method",
+         "description": "HTTP method.",
+         "enum": [
+            "GET",
+            "POST",
+            "PUT",
+            "DELETE"
+         ],
+         "default": "GET"
+      },
+      "parameter": {
+         "type": "object",
+         "title": "Parameter",
+         "description": "Description of single parameter.",
+         "properties": {
+            "name": {
+               "type": "string",
+               "title": "Parameter's Name",
+               "description": "Name of the parameter."
+            },
+            "value": {
+               "type": "string",
+               "title": "Parameter's Value.",
+               "description": "Value of the parameter."
+            },
+            "type": {
+               "type": "string",
+               "title": "Parameter's Type.",
+               "description": "Type of the parameter.",
+               "enum": ["string", "number", "boolean"]
+            }
+         }
+      },
+      "request": {
+         "type": "object",
+         "title": "Request Payload",
+         "description": "Definition of the parameters for the request.",
+         "properties": {
+            "parameters": {
+               "type": "array",
+               "items": {
+                  "$ref": "#/definitions/parameter"
+               }
+            }
+         }
+      },
+      "response": {
+         "type": "object",
+         "title": "Response Payload",
+         "description": "Definition of the parameters for the response."
+      },
+      "service": {
+         "type": "object",
+         "title": "REST Web Service",
+         "description": "Definition of the service.",
+         "required": [
+            "baseURL",
+            "method",
+            "request",
+            "response"
+         ],
+         "properties": {
+            "baseURL": {
+               "$ref": "#/definitions/baseURL"
+            },
+            "method": {
+               "$ref": "#/definitions/method"
+            },
+            "request": {
+               "$ref": "#/definitions/request"
+            },
+            "response": {
+               "$ref": "#/definitions/response"
+            }
+         }
+      }
+   },
+   "properties": {
+      "services": {
+         "type": "array",
+         "title": "Available Services",
+         "description": "List of available REST web services.",
+         "items": {
+            "$ref": "#/definitions/service"
+         }
+      }
+   }
+}
