@@ -132,17 +132,15 @@
       },
       "services": {
          "type": "array",
-         "title": "Available Services",
-         "description": "List of available REST web services.",
+         "title": "Services",
+         "description": "Available REST Web Services.",
          "items": {
             "$ref": "#/definitions/service"
          }
       }
    },
    "properties": {
-      "wds": {
-         "title": "WDS",
-         "description": "Available WDS Services.",
+      "services": {
          "$ref": "#/definitions/services"
       }
    }
