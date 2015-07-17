@@ -1,13 +1,16 @@
 {
    "$schema": "http://json-schema.org/draft-04/schema#",
-   "type": "string",
-   "title": "HTTP Method",
-   "description": "HTTP method.",
-   "enum": [
-      "GET",
-      "POST",
-      "PUT",
-      "DELETE"
-   ],
-   "default": "GET"
+   "type": "object",
+   "method": {
+      "type": "string",
+      "title": "HTTP Method",
+      "description": "HTTP method.",
+      "enum": [
+         "GET",
+         "POST",
+         "PUT",
+         "DELETE"
+      ],
+      "default": "GET"
+   }
 }
