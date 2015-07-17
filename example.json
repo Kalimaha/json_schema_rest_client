@@ -6,7 +6,7 @@
   "definitions": {
     "method": {
       "type": "string",
-      "title": "HTTP Method"
+      "title": "HTTP Method",
       "description": "HTTP method.",
       "enum": ["GET", "POST", "PUT", "DELETE"],
       "default": "GET"
