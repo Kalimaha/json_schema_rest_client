@@ -8,7 +8,8 @@
       "type": "string",
       "title": "HTTP Method"
       "description": "HTTP method.",
-      "enum": ["GET", "POST", "PUT", "DELETE"]
+      "enum": ["GET", "POST", "PUT", "DELETE"],
+      "default": "GET"
     },
     "request": {
       "type": "object",
@@ -17,14 +18,18 @@
     },
     "response": {
       "type": "object",
-      "title": Response Payload",
+      "title": "Response Payload",
       "description": "Definition of the parameters for the response."
     },
     "service": {
       "type": "object",
       "title": "REST Web Service",
       "description": "Definition of the service.",
+      "required": ["method", "request", "response"],
       "properties": {
+        "method": {
+          "$ref": "#/definitions/method"
+        },
         "request": {
           "$ref": "#/definitions/request"
         },
