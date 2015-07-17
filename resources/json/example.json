@@ -139,9 +139,10 @@
          }
       }
    },
-
    "properties": {
       "wds": {
+         "title": "WDS",
+         "description": "Available WDS Services.",
          "$ref": "#/definitions/services"
       }
    }
