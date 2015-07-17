@@ -2,3 +2,7 @@
 
 # REST Client Based on JSON Schema
 A REST web services client based on JSON Schema.
+
+Developed with 
+--------------
+![IntelliJ](http://www.jetbrains.com/idea/docs/logo_intellij_idea.png)
