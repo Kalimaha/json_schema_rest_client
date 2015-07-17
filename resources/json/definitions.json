@@ -90,7 +90,9 @@
                ]
             }
          }
-      },
+      }
+   },
+   "properties": {
       "service": {
          "type": "object",
          "title": "REST Web Service",
