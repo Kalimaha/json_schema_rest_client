@@ -120,15 +120,5 @@
             }
          }
       }
-   },
-   "properties": {
-      "services": {
-         "type": "array",
-         "title": "Available Services",
-         "description": "List of available REST web services.",
-         "items": {
-            "$ref": "#/definitions/service"
-         }
-      }
    }
 }
