@@ -28,6 +28,31 @@
          ],
          "default": "GET"
       },
+      "header": {
+         "type": "object",
+         "title": "Header",
+         "description": "Request header.",
+         "properties": {
+            "name": {
+               "type": "string",
+               "title": "Header's Name",
+               "description": "Name of the header."
+            },
+            "value": {
+               "type": "string",
+               "title": "Header's Value",
+               "description": "Value of the header."
+            }
+         }
+      },
+      "headers": {
+         "type": "array",
+         "title": "Headers",
+         "description": "Request headers.",
+         "items": {
+            "$ref": "#/definitions/header"
+         }
+      },
       "parameter": {
          "type": "object",
          "title": "Parameter",
@@ -108,6 +133,7 @@
          "required": [
             "baseURL",
             "endpoint",
+            "headers",
             "method",
             "request",
             "response"
@@ -118,6 +144,9 @@
             },
             "endpoint": {
                "$ref": "#/definitions/endpoint"
+            },
+            "headers": {
+               "$ref": "#/definitions/headers"
             },
             "method": {
                "$ref": "#/definitions/method"
